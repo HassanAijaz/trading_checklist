@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Photon Trade Plan (PTP 3.0) – Execution Checklist</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root { --fg:#111; --muted:#666; }
+  * { box-sizing: border-box; }
+  body {
+    font: 12px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+    color: var(--fg);
+    margin: 0; padding: 0;
+  }
+  h1 { font-size: 18px; margin: 0 0 6px; }
+  h2 { font-size: 13px; margin: 10px 0 6px; }
+  h3 { font-size: 12px; margin: 8px 0 4px; font-weight: 600; color: #222; }
+  .meta { color: var(--muted); margin-bottom: 6px; }
+  section { break-inside: avoid; margin: 0 0 10px; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; }
+  ul { list-style: none; padding: 0; margin: 4px 0 8px; }
+  li { margin: 2px 0; display: flex; align-items: flex-start; gap: 6px; }
+  input[type="checkbox"] { width: 12px; height: 12px; margin-top: 2px; }
+  small { color: var(--muted); }
+  .printbtn { display: inline-block; padding: 6px 10px; border:1px solid #ccc; border-radius:6px; background:#fafafa; cursor:pointer; margin: 8px 0 6px; }
+  /* Notes box */
+  .notes-wrap { margin-top: 6px; }
+  .notes-label { font-size: 11px; color: var(--muted); margin: 0 0 3px; }
+  .notes {
+    width: 100%;
+    min-height: 64px;
+    border: 1px dashed #bdbdbd;
+    border-radius: 6px;
+    padding: 6px 8px;
+    resize: vertical;
+    font: inherit;
+  }
+  @media print { .printbtn { display: none; } .notes { border-color:#cfcfcf; } }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Photon Trade Plan (PTP 3.0) – Execution Checklist</h1>
+    <div class="meta"><small>Tick items before/during each trade. Vertical single-page flow.</small></div>
+    <button class="printbtn" onclick="window.print()">Print / Save as PDF</button>
+
+    <!-- 1) Mapping -->
+    <section>
+      <h2>1) Mapping Process</h2>
+      <ul>
+        <li><input type="checkbox"><label>Identify <b>HTF narrative</b> (continuation or pullback)</label></li>
+        <li><input type="checkbox"><label>Map <b>HTF swing &amp; internal</b> ranges</label></li>
+        <li><input type="checkbox"><label>Mark <b>HTF S/D</b> zones</label></li>
+        <li><input type="checkbox"><label>Identify <b>liquidity sweeps</b> &amp; <b>liquidity pools</b></label></li>
+        <li><input type="checkbox"><label><b>Set alerts</b> at HTF POIs &amp; swing H/L</label></li>
+        <li><input type="checkbox"><label>Repeat on <b>MTF</b> → bias, POIs, alerts</label></li>
+        <li><input type="checkbox"><label>Prepare on <b>LTF</b> → wait for MTF mitigation &amp; entry model</label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 2) POI Minimum -->
+    <section>
+      <h2>2) POI Selection – Minimum</h2>
+      <ul>
+        <li><input type="checkbox"><label>Valid S/D zone (<b>Engulfed</b> or <b>STB/BTS</b>)</label></li>
+        <li><input type="checkbox"><label><b>Structure break</b> caused (CHOCH / i-BOS / BOS)</label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 3) POI Confluence -->
+    <section>
+      <h2>3) POI Selection – Confluence</h2>
+      <ul>
+        <li><input type="checkbox"><label>Flip zone</label></li>
+        <li><input type="checkbox"><label>Swept liquidity</label></li>
+        <li><input type="checkbox"><label>Inducement (clean liquidity ahead)</label></li>
+        <li><input type="checkbox"><label><b>Stacked</b> with HTF zone</label></li>
+        <li><input type="checkbox"><label><b>Well priced</b> (P&amp;D extremes)</label></li>
+        <li><input type="checkbox"><label><b>Unmitigated</b> (fresh)</label></li>
+        <li><input type="checkbox"><label>Part of a <b>mitigation chain</b></label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 4) Validation (merged with sub-headings) -->
+    <section>
+      <h2>4) Validation – Master Checklist</h2>
+
+      <h3>Narrative &amp; Structure</h3>
+      <ul>
+        <li><input type="checkbox"><label>HTF → MTF → LTF <b>aligned</b>?</label></li>
+        <li><input type="checkbox"><label><b>Trend continuation</b> or <b>pullback</b> reaction?</label></li>
+        <li><input type="checkbox"><label>What structure did it break (fractal / internal / swing)?</label></li>
+        <li><input type="checkbox"><label><b>Momentum shift / imbalance</b> created?</label></li>
+        <li><input type="checkbox"><label><b>Flip</b> caused (how significant)?</label></li>
+        <li><input type="checkbox"><label>HTF narrative clear (not forcing bias in chop)?</label></li>
+      </ul>
+
+      <h3>Liquidity &amp; Inducement</h3>
+      <ul>
+        <li><input type="checkbox"><label>POI <b>swept liquidity</b>?</label></li>
+        <li><input type="checkbox"><label><b>Inducement</b> present ahead?</label></li>
+        <li><input type="checkbox"><label><b>Nearest liquidity</b> pool swept already?</label></li>
+        <li><input type="checkbox"><label>Clean liquidity above/below target that could magnet price?</label></li>
+        <li><input type="checkbox"><label><b>Liquidity taken before entry</b> confirmed?</label></li>
+      </ul>
+
+      <h3>Zone Quality &amp; Confluence</h3>
+      <ul>
+        <li><input type="checkbox"><label>POI <b>engulfed</b> or <b>STB/BTS</b> valid?</label></li>
+        <li><input type="checkbox"><label><b>Stacked</b> with HTF zone?</label></li>
+        <li><input type="checkbox"><label><b>Priced well</b> (P&amp;D / extremes)?</label></li>
+        <li><input type="checkbox"><label><b>Fresh / unmitigated</b>?</label></li>
+        <li><input type="checkbox"><label>Part of a <b>chain</b>?</label></li>
+        <li><input type="checkbox"><label><b>Delivery</b> into zone: corrective (better) vs impulsive (riskier)</label></li>
+      </ul>
+
+      <h3>Risk &amp; Probability</h3>
+      <ul>
+        <li><input type="checkbox"><label><b>R:R ≥ 1:5</b> realistically achievable?</label></li>
+        <li><input type="checkbox"><label>Overlapping/competing POIs (indecision)?</label></li>
+        <li><input type="checkbox"><label>Would I take this trade <b>10/10</b> times?</label></li>
+        <li><input type="checkbox"><label>Within <b>session hours</b> (LDN/NY)?</label></li>
+        <li><input type="checkbox"><label><b>Pre/post news</b> volatility risk checked?</label></li>
+      </ul>
+
+      <h3>Control &amp; Psychology</h3>
+      <ul>
+        <li><input type="checkbox"><label>Who is in control — <b>supply or demand</b>?</label></li>
+        <li><input type="checkbox"><label><b>What’s being mitigated</b> at this POI?</label></li>
+        <li><input type="checkbox"><label><b>HTF objective</b> complete or in progress?</label></li>
+        <li><input type="checkbox"><label>Calls for higher/lower prices (unmitigated POIs / weak structure / liquidity pools)?</label></li>
+        <li><input type="checkbox"><label>Trading a <b>valid setup</b>, not chasing action?</label></li>
+        <li><input type="checkbox"><label>Not <b>revenge trading</b> after a loss?</label></li>
+        <li><input type="checkbox"><label>Would I take this if it were my <b>last trade today</b>?</label></li>
+      </ul>
+
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 5) LTF Execution -->
+    <section>
+      <h2>5) LTF Execution</h2>
+      <ul>
+        <li><input type="checkbox"><label>Confirm <b>MTF POI mitigation</b></label></li>
+        <li><input type="checkbox"><label>Wait for <b>valid entry model</b> (RE / CE / LQ-EM)</label></li>
+        <li><input type="checkbox"><label><b>Liquidity sweep before entry</b> confirmed</label></li>
+        <li><input type="checkbox"><label><b>Momentum out</b> (V-shape / CHoCH)</label></li>
+        <li><input type="checkbox"><label>Entry → <b>Edge / 25% / EQ / body</b></label></li>
+        <li><input type="checkbox"><label><b>SL behind zone</b> (+ spread buffer)</label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 6) Trade Management -->
+    <section>
+      <h2>6) Trade Management</h2>
+      <ul>
+        <li><input type="checkbox"><label>Pro-trend/Pro-Orderflow target = <b>10R</b></label></li>
+        <li><input type="checkbox"><label>Counter-trend target = <b>5R</b></label></li>
+        <li><input type="checkbox"><label>New traders: fixed <b>3R–5R</b></label></li>
+        <li><input type="checkbox"><label>Adjust if <b>key level near target</b></label></li>
+        <li><input type="checkbox"><label>Move to <b>BE after LTF pullback break</b></label></li>
+        <li><input type="checkbox"><label><b>Trail</b> behind LTF strong H/L</label></li>
+        <li><input type="checkbox"><label>Optional <b>partials</b> to reduce risk</label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 7) Risk Management -->
+    <section>
+      <h2>7) Risk Management</h2>
+      <ul>
+        <li><input type="checkbox"><label><b>Max 3 losses/day</b> (stop after 3)</label></li>
+        <li><input type="checkbox"><label><b>Risk 0.5%</b> per trade (tune with data)</label></li>
+        <li><input type="checkbox"><label><b>Minimum SL = 2 pips</b></label></li>
+        <li><input type="checkbox"><label>Stick to one instrument (<b>EURUSD</b>)</label></li>
+        <li><input type="checkbox"><label>No trades <b>&lt; 30 min</b> before high-impact news</label></li>
+        <li><input type="checkbox"><label>Sessions: <b>LDN 7–10</b>, <b>NY 12–4</b>, <b>Swing 7–17</b> (London time)</label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <!-- 8) Final Check -->
+    <section>
+      <h2>8) Final Trade Check</h2>
+      <ul>
+        <li><input type="checkbox"><label>HTF/MTF/LTF <b>alignment confirmed</b></label></li>
+        <li><input type="checkbox"><label>POI meets <b>criteria + confluences</b></label></li>
+        <li><input type="checkbox"><label><b>Validation checklist</b> positive</label></li>
+        <li><input type="checkbox"><label><b>Liquidity sweep</b> confirmed</label></li>
+        <li><input type="checkbox"><label><b>Risk &amp; session</b> filters respected</label></li>
+        <li><input type="checkbox"><label><b>Management plan</b> ready</label></li>
+      </ul>
+      <div class="notes-wrap">
+        <div class="notes-label">Notes:</div>
+        <textarea class="notes" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
