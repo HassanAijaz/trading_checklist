@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Timeframe Trade Bias Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .box {
+      background: white;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+    select {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #eef5ff;
+      border: 1px solid #a5c8ff;
+    }
+    .bias {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📊 Multi-Timeframe Bias Calculator</h2>
+
+  <div class="box">
+    <label>4H Trend:
+      <select id="htf">
+        <option value="">-- Select --</option>
+        <option value="bullish">Bullish</option>
+        <option value="bearish">Bearish</option>
+      </select>
+    </label>
+
+    <label>15M Trend:
+      <select id="mtf">
+        <option value="">-- Select --</option>
+        <option value="bullish">Bullish</option>
+        <option value="bearish">Bearish</option>
+      </select>
+    </label>
+
+    <label>1M Trend:
+      <select id="ltf">
+        <option value="">-- Select --</option>
+        <option value="bullish">Bullish</option>
+        <option value="bearish">Bearish</option>
+      </select>
+    </label>
+
+    <button onclick="calculateBias()">Get Bias</button>
+  </div>
+
+  <div class="result" id="result" style="display:none;">
+    <div class="bias" id="bias"></div>
+    <p id="explanation"></p>
+  </div>
+
+<script>
+function calculateBias() {
+  let htf = document.getElementById("htf").value;
+  let mtf = document.getElementById("mtf").value;
+  let ltf = document.getElementById("ltf").value;
+
+  let bias = "";
+  let explanation = "";
+
+  if (!htf || !mtf || !ltf) {
+    document.getElementById("result").style.display = "block";
+    document.getElementById("bias").innerText = "⚠️ Please select all three timeframes.";
+    document.getElementById("explanation").innerText = "";
+    return;
+  }
+
+  // Truth Table Logic
+  if (htf === "bullish" && mtf === "bullish" && ltf === "bullish") {
+    bias = "✅ Strong Long";
+    explanation = "Full bullish alignment across all timeframes. Trend continuation setup.";
+  } 
+  else if (htf === "bullish" && mtf === "bullish" && ltf === "bearish") {
+    bias = "⚠️ Wait → Long";
+    explanation = "HTF & MTF bullish, but LTF is retracing. Likely liquidity grab. Wait for 1M flip bullish.";
+  } 
+  else if (htf === "bullish" && mtf === "bearish" && ltf === "bullish") {
+    bias = "⚠️ No Clear Trade";
+    explanation = "HTF bullish, MTF pulling back, but LTF rejecting lows. Could be end of pullback — safer to wait for MTF flip.";
+  } 
+  else if (htf === "bullish" && mtf === "bearish" && ltf === "bearish") {
+    bias = "✅ Countertrend Short";
+    explanation = "MTF confirms pullback against bullish HTF, and LTF aligns bearish. Countertrend short valid until HTF demand.";
+  } 
+  else if (htf === "bearish" && mtf === "bearish" && ltf === "bearish") {
+    bias = "✅ Strong Short";
+    explanation = "Full bearish alignment across all timeframes. Trend continuation setup.";
+  } 
+  else if (htf === "bearish" && mtf === "bearish" && ltf === "bullish") {
+    bias = "⚠️ Wait → Short";
+    explanation = "HTF & MTF bearish, but LTF is retracing. Wait for LTF to flip bearish before entering.";
+  } 
+  else if (htf === "bearish" && mtf === "bullish" && ltf === "bearish") {
+    bias = "⚠️ No Clear Trade";
+    explanation = "HTF bearish, MTF pulling back, but LTF rejecting highs. Could be end of pullback — safer to wait for MTF flip.";
+  } 
+  else if (htf === "bearish" && mtf === "bullish" && ltf === "bullish") {
+    bias = "✅ Countertrend Long";
+    explanation = "MTF confirms pullback against bearish HTF, and LTF aligns bullish. Countertrend long valid until HTF supply.";
+  }
+
+  document.getElementById("result").style.display = "block";
+  document.getElementById("bias").innerText = bias;
+  document.getElementById("explanation").innerText = explanation;
+}
+</script>
+
+</body>
+</html>
